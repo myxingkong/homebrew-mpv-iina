@@ -4,8 +4,8 @@
 class FfmpegIina < Formula
   desc "Play, record, convert, and stream audio and video"
   homepage "https://ffmpeg.org/"
-  url "https://ffmpeg.org/releases/ffmpeg-7.0.1.tar.xz"
-  sha256 "bce9eeb0f17ef8982390b1f37711a61b4290dc8c2a0c1a37b5857e85bfb0e4ff"
+  url "https://ffmpeg.org/releases/ffmpeg-7.0.2.tar.xz"
+  sha256 "8646515b638a3ad303e23af6a3587734447cb8fc0a0c064ecdb8e95c4fd8b389"
   head "https://github.com/FFmpeg/FFmpeg.git", branch: "master"
 
   keg_only <<EOS
