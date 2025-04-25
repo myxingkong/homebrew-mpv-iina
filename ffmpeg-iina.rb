@@ -43,6 +43,13 @@ EOS
 
   def install
 
+    # force ffmpeg to use the correct deployment target
+    if Hardware::CPU.arm?
+      ENV["MACOSX_DEPLOYMENT_TARGET"] = "11.0"
+    elsif Hardware::CPU.intel?
+      ENV["MACOSX_DEPLOYMENT_TARGET"] = "10.15"
+    end
+    
     args = %W[
       --prefix=#{prefix}
       --enable-shared

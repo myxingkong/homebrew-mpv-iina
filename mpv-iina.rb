@@ -39,6 +39,13 @@ desc "Media player based on MPlayer and mplayer2"
     # that's good enough for building the manpage.
     ENV["LC_ALL"] = "C"
 
+    # force mpv to use the correct deployment target
+    if Hardware::CPU.arm?
+      ENV["MACOSX_DEPLOYMENT_TARGET"] = "11.0"
+    elsif Hardware::CPU.intel?
+      ENV["MACOSX_DEPLOYMENT_TARGET"] = "10.15"
+    end
+
     # force meson find ninja from homebrew
     ENV["NINJA"] = Formula["ninja"].opt_bin/"ninja"
 
